@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Album 9A2526</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#05060f;
+color:white;
+overflow-x:hidden;
+}
+
+/* trời sao */
+
+#sky{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+pointer-events:none;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:.8;
+}
+
+/* sao băng */
+
+.shoot{
+position:absolute;
+width:250px;
+height:2px;
+background:linear-gradient(90deg,white,transparent);
+animation:shoot 2s linear;
+}
+
+@keyframes shoot{
+
+0%{
+transform:translateX(-200px)
+}
+
+100%{
+transform:translateX(120vw) translateY(150px);
+opacity:0
+}
+
+}
+
+/* trang */
+
+.page{
+display:none;
+padding:40px;
+min-height:100vh;
+position:relative;
+z-index:2;
+animation:fade .6s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1}
+}
+
+/* trang chủ */
+
+#home{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+z-index:2;
+position:relative;
+}
+
+h1{
+font-size:46px;
+margin-bottom:20px;
+}
+
+/* menu */
+
+.menu{
+
+backdrop-filter:blur(12px);
+background:rgba(255,255,255,.08);
+
+padding:25px 40px;
+border-radius:20px;
+}
+
+.menu button{
+
+margin:8px;
+padding:12px 24px;
+
+border:none;
+border-radius:20px;
+
+background:rgba(255,255,255,.2);
+color:white;
+
+cursor:pointer;
+
+}
+
+/* gallery */
+
+.gallery{
+
+margin-top:40px;
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+
+}
+
+.gallery img{
+
+width:100%;
+border-radius:14px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.06);
+
+box-shadow:0 0 20px rgba(255,255,255,.5);
+
+}
+
+/* viewer */
+
+#viewer{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.95);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+z-index:10;
+
+}
+
+#viewer img{
+
+max-width:90%;
+max-height:80%;
+
+border-radius:20px;
+
+}
+
+.close{
+
+margin-top:20px;
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:10px;
+
+background:red;
+color:white;
+
+cursor:pointer;
+
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.gallery{
+grid-template-columns:repeat(3,1fr)
+}
+
+}
+
+@media(max-width:600px){
+
+.gallery{
+grid-template-columns:repeat(2,1fr)
+}
+
+h1{
+font-size:34px
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="sky"></div>
+
+<!-- TRANG CHỦ -->
+
+<div id="home">
+
+<h1>Album meme
+</h1>
+<h2>9A2526</h2>
+
+<div class="menu">
+
+<button onclick="openPage('p1')">9A25</button>
+<button onclick="openPage('p2')">9A26</button>
+<button onclick="openPage('p3')">9Ahaha</button>
+<button onclick="openPage('p4')">9A2526</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 1 -->
+
+<div id="p1" class="page">
+
+<h2>9A25</h2>
+
+<div class="gallery">
+
+<img src="dieu thoa.jpeg" onclick="view(this)">
+<img src="tan.jpeg" onclick="view(this)">
+<img src="trai nghiem ca lop.jpeg" onclick="view(this)">
+<img src="tu tuan wc.jpeg" onclick="view(this)">
+<img src="trai nghiem.jpeg" onclick="view(this)">
+
+<img src="tam .jpeg" onclick="view(this)">
+<img src="hieu ngoc.jpeg" onclick="view(this)">
+<img src="trung tan ngu.jpeg" onclick="view(this)">
+<img src="20:10.jpeg" onclick="view(this)">
+<img src="ae.jpeg" onclick="view(this)">
+
+</div>
+
+<br><br>
+
+<button onclick="goHome()">Trang chủ</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div id="p2" class="page">
+
+<h2>9A26</h2>
+
+<div class="gallery">
+
+<img src="duong manh leo cay.jpeg" onclick="view(this)">
+<img src="duong manh.jpeg" onclick="view(this)">
+<img src="duong thoa.jpeg" onclick="view(this)">
+<img src="huy dieu.jpeg" onclick="view(this)">
+<img src="nd di.jpeg" onclick="view(this)">
+
+<img src="buong binh.jpeg" onclick="view(this)">
+<img src="an.jpeg" onclick="view(this)">
+<img src="tet.jpeg" onclick="view(this)">
+<img src="vu minh giga chad.jpeg" onclick="view(this)">
+<img src="vu minh.jpeg" onclick="view(this)">
+
+</div>
+
+<br><br>
+
+<button onclick="goHome()">Trang chủ</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div id="p3" class="page">
+
+<h2>9Ahaha</h2>
+
+<div class="gallery">
+
+<img src="3ae.jpeg" onclick="view(this)">
+<img src="nd rau.png" onclick="view(this)">
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.35.50 CH.png" onclick="view(this)">
+<img src="ducanh.png" onclick="view(this)">
+<img src="nhat.png" onclick="view(this)">
+
+<img src="shaur.jpeg" onclick="view(this)">
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.25.21 CH.png" onclick="view(this)">
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.22.55 CH.png" onclick="view(this)">
+<img src="va.jpeg" onclick="view(this)">
+<img src="tam beo.jpeg" onclick="view(this)">
+
+</div>
+
+<br><br>
+
+<button onclick="goHome()">Trang chủ</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div id="p4" class="page">
+
+<h2>9A2526</h2>
+
+<div class="gallery">
+
+<img src="khanh .jpg" onclick="view(this)">
+<img src="bum.jpg" onclick="view(this)">
+<img src="huy tung.jpeg" onclick="view(this)">
+<img src="quyet.jpg" onclick="view(this)">
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.36.47 CH.png" onclick="view(this)">
+
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.37.57 CH.png" onclick="view(this)">
+<img src="Ảnh chụp Màn hình 2026-03-15 lúc 4.39.22 CH.png" onclick="view(this)">
+<img src="tải xuống" onclick="view(this)">
+<img src="khang thoa kinh.jpg" onclick="view(this)">
+<img src="cho tu.jpg" onclick="view(this)">
+
+</div>
+
+<br><br>
+
+<button onclick="goHome()">Trang chủ</button>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="viewer">
+
+<img id="big">
+
+<button class="close" onclick="closeImg()">Thoát</button>
+
+</div>
+
+<script>
+
+/* chuyển trang */
+
+function openPage(id){
+
+document.getElementById("home").style.display="none"
+
+document.querySelectorAll(".page").forEach(p=>p.style.display="none")
+
+document.getElementById(id).style.display="block"
+
+}
+
+function goHome(){
+
+document.querySelectorAll(".page").forEach(p=>p.style.display="none")
+
+document.getElementById("home").style.display="flex"
+
+}
+
+/* xem ảnh */
+
+function view(img){
+
+document.getElementById("viewer").style.display="flex"
+document.getElementById("big").src=img.src
+
+}
+
+function closeImg(){
+
+document.getElementById("viewer").style.display="none"
+
+}
+
+/* sao */
+
+for(let i=0;i<140;i++){
+
+let star=document.createElement("div")
+
+star.className="star"
+
+star.style.top=Math.random()*100+"vh"
+star.style.left=Math.random()*100+"vw"
+
+document.getElementById("sky").appendChild(star)
+
+}
+
+/* sao băng */
+
+setInterval(()=>{
+
+let s=document.createElement("div")
+
+s.className="shoot"
+
+s.style.top=Math.random()*40+"vh"
+
+document.getElementById("sky").appendChild(s)
+
+setTimeout(()=>s.remove(),2000)
+
+},3500)
+
+/* parallax */
+
+document.addEventListener("mousemove",e=>{
+
+let x=(e.clientX/window.innerWidth-.5)*20
+let y=(e.clientY/window.innerHeight-.5)*20
+
+document.getElementById("sky").style.transform="translate("+x+"px,"+y+"px)"
+
+})
+
+</script>
+
+</body>
+</html>
